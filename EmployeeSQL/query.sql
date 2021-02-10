@@ -34,7 +34,7 @@ join employees as e on p.emp_no = e.emp_no;
 
 SELECT first_name, last_name, sex 
 FROM employees
-WHERE first_name = "Hercules" AND last_name LIKE 'B%';
+WHERE first_name = 'Hercules' AND last_name LIKE 'B%';
 
 ---6. List all employees in the Sales department, 
    ---including their employee number, last name, first name, and department name.
@@ -52,7 +52,7 @@ SELECT e.emp_no, e.last_name, e.first_name, d.dept_name
 from dept_emp as p
 join employees as e on p.emp_no = e.emp_no
 join departments as d on p.dept_no = d.dept_no
-WHERE d.dept_name = 'Sales' or d.dept_name = "Development";
+WHERE d.dept_name = 'Sales' or d.dept_name = 'Development';
 
 
 ---8. In descending order, list the frequency count of employee last names, 

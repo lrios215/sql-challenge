@@ -1,7 +1,4 @@
-﻿-- Exported from QuickDBD: https://www.quickdatabasediagrams.com/
--- Link to schema: https://app.quickdatabasediagrams.com/#/d/3zpmKB
-
-
+﻿
 --creating a table schema for all 6 CSV files
 CREATE TABLE departments (
     dept_no VARCHAR,
@@ -38,5 +35,5 @@ CREATE TABLE titles (
     title VARCHAR
 );
 
----importing and verifying csvs
+---importing and verifying all the CSV
 SELECT * FROM departments
