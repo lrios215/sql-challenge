@@ -8,7 +8,7 @@ Complete a research project on employees of the corporation from the 1980s and 1
 #### Data Modeling
 
 Inspect the CSVs and sketch out an ERD of the tables. 
-![ERD](images/employees_SQL_ERD)
+![ERD](images/employees_SQL_ERD.png)
 
 #### Data Engineering
 
@@ -23,7 +23,7 @@ CREATE TABLE departments (
 );
 ```
 * Import each CSV file into the corresponding SQL table.
-![table import](images/import_data)
+![table import](images/import_data.png)
 
 #### Data Analysis
 
@@ -36,7 +36,7 @@ FROM employees as e
 JOIN salaries as s
 ON e.emp_no = s.emp_no;
 ```
-![Q1](images/Q1)
+![Q1](images/Q1.png)
 
 2. List first name, last name, and hire date for employees who were hired in 1986.
 ```
@@ -44,7 +44,7 @@ SELECT emp_no, first_name, last_name
 FROM employees
 WHERE hire_date between '1986-01-01' AND '1986-12-31'
 ```
-![Q2](images/Q2)
+![Q2](images/Q2.png)
 
 3. List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name.
 ```
@@ -53,7 +53,7 @@ FROM dept_manager as m
 JOIN departments as d on m.dept_no = d.dept_no
 JOIN employees as e on m.emp_no = e.emp_no;
 ```
-![Q3](images/Q3)
+![Q3](images/Q3.png)
 
 4. List the department of each employee with the following information: employee number, last name, first name, and department name.
 ```
@@ -62,7 +62,7 @@ from dept_emp as p
 join departments as d on p.dept_no = d.dept_no
 join employees as e on p.emp_no = e.emp_no;
 ```
-![Q4](images/Q4)
+![Q4](images/Q4.png)
 
 5. List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
 ```
@@ -70,7 +70,7 @@ SELECT first_name, last_name, sex
 FROM employees
 WHERE first_name = 'Hercules' AND last_name LIKE 'B%';
 ```
-![Q5](images/Q5)
+![Q5](images/Q5.png)
 
 6. List all employees in the Sales department, including their employee number, last name, first name, and department name.
 ```
@@ -80,7 +80,7 @@ join employees as e on p.emp_no = e.emp_no
 join departments as d on p.dept_no = d.dept_no
 WHERE d.dept_name = 'Sales';
 ```
-![Q6](images/Q6)
+![Q6](images/Q6.png)
 
 7. List all employees in the Sales and Development departments, including their employee number, last name, first name, and department name.
 ```
@@ -90,7 +90,7 @@ join employees as e on p.emp_no = e.emp_no
 join departments as d on p.dept_no = d.dept_no
 WHERE d.dept_name = 'Sales' or d.dept_name = 'Development';
 ```
-![Q7](images/Q7)
+![Q7](images/Q7.png)
 
 8. In descending order, list the frequency count of employee last names, i.e., how many employees share each last name.
 ```
@@ -99,5 +99,5 @@ FROM employees
 GROUP BY last_name
 ORDER BY 2 desc;
 ```
-![Q8](images/Q8)
+![Q8](images/Q8.png)
 
